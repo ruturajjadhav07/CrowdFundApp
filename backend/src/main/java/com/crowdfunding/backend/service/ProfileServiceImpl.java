@@ -9,7 +9,6 @@ import org.springframework.web.server.ResponseStatusException;
 import com.crowdfunding.backend.dto.ProfileRequest;
 import com.crowdfunding.backend.dto.ProfileResponse;
 import com.crowdfunding.backend.entity.UserEntity;
-import com.crowdfunding.backend.enums.Role;
 import com.crowdfunding.backend.exception.UserNotFoundException;
 import com.crowdfunding.backend.repository.UserRepository;
 
@@ -47,7 +46,6 @@ public class ProfileServiceImpl implements ProfileService {
                 .email(request.getEmail())
                 .password(request.getPassword())
                 .userId(UUID.randomUUID().toString())
-                .role(Role.USER)
                 .build();
     }
 

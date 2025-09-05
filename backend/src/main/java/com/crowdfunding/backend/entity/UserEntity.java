@@ -5,12 +5,8 @@ import java.sql.Timestamp;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.crowdfunding.backend.enums.Role;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -43,9 +39,6 @@ public class UserEntity {
 
     @Column(nullable = false, unique = true)
     private String username;
-
-    @Enumerated(EnumType.STRING)
-    private Role role;
 
     @CreationTimestamp
     @Column(updatable = false)
