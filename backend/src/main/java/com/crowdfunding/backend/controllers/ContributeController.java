@@ -1,0 +1,26 @@
+package com.crowdfunding.backend.controllers;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.crowdfunding.backend.dto.ContributionRequest;
+import com.crowdfunding.backend.dto.ContributionResponse;
+import com.crowdfunding.backend.service.ContributionService;
+
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequiredArgsConstructor
+public class ContributeController {
+
+    private final ContributionService contributionService;
+
+    @PostMapping("/contribution/{email}")
+    public ContributionResponse contribute(@Valid @RequestBody ContributionRequest request,
+            @PathVariable String email) {
+        return contributionService.createContribution(request, email);
+    }
+}

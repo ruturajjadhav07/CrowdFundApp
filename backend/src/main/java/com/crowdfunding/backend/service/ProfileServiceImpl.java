@@ -3,6 +3,7 @@ package com.crowdfunding.backend.service;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -19,6 +20,8 @@ import lombok.RequiredArgsConstructor;
 public class ProfileServiceImpl implements ProfileService {
 
     private final UserRepository userRepository;
+
+    private final PasswordEncoder passwordEncoder;
 
     // create user profile
     @Override
@@ -44,7 +47,7 @@ public class ProfileServiceImpl implements ProfileService {
         return UserEntity.builder()
                 .username(request.getUsername())
                 .email(request.getEmail())
-                .password(request.getPassword())
+                .password(passwordEncoder.encode(request.getPassword()))
                 .userId(UUID.randomUUID().toString())
                 .build();
     }
