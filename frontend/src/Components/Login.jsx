@@ -16,7 +16,7 @@ const Login = () => {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div className="d-flex justify-content-center align-items-center min-vh-100 bg-light">
         <div
           className="card p-4 shadow"

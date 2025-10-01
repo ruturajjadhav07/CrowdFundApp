@@ -18,6 +18,7 @@ const Home = () => {
           }}
         />
         <div
+          id="home"
           style={{
             position: "absolute",
             top: "50%",

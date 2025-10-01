@@ -8,7 +8,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      email, query
+      email, query;
     }, 2000);
   };
 

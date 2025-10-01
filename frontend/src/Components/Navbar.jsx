@@ -64,8 +64,8 @@ const Navbar = () => {
         >
           <ul className="navbar-nav ms-auto gap-3">
             <li className="nav-item">
-              <Link
-                to="/"
+              <a
+                href="#home"
                 className="nav-link"
                 style={linkStyle}
                 onMouseEnter={handleMouseEnter}
@@ -73,7 +73,7 @@ const Navbar = () => {
                 onClick={() => setIsCollapsed(true)} // close menu after click
               >
                 Home
-              </Link>
+              </a>
             </li>
 
             <li className="nav-item">
